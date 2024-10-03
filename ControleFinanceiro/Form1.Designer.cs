@@ -61,6 +61,7 @@
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(100, 23);
             txtNome.TabIndex = 2;
+            txtNome.TextChanged += txtNome_TextChanged;
             // 
             // txtCPF
             // 
@@ -68,6 +69,7 @@
             txtCPF.Name = "txtCPF";
             txtCPF.Size = new Size(100, 23);
             txtCPF.TabIndex = 3;
+            txtCPF.TextChanged += txtCPF_TextChanged;
             // 
             // btnInserir
             // 
@@ -89,6 +91,7 @@
             btnExcluir.TabIndex = 5;
             btnExcluir.Text = "Excluir";
             btnExcluir.UseVisualStyleBackColor = true;
+            btnExcluir.Click += btnExcluir_Click;
             // 
             // lstClientes
             // 
@@ -98,6 +101,7 @@
             lstClientes.Name = "lstClientes";
             lstClientes.Size = new Size(158, 109);
             lstClientes.TabIndex = 6;
+            lstClientes.SelectedIndexChanged += lstClientes_SelectedIndexChanged;
             // 
             // frmCliente
             // 

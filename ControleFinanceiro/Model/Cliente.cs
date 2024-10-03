@@ -8,7 +8,12 @@ namespace ControleFinanceiro.Model
 {
     public class Cliente
     {
-        private string Nome { get; set; }
-        private string CPF { get; set; }
+        public string Nome { get; set; }
+        public string CPF { get; set; }
+        public override string ToString()
+        {
+            return Nome + " - " + CPF;
+        }
     }
 }
+
