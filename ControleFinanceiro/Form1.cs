@@ -16,12 +16,6 @@ namespace ControleFinanceiro
         {
 
         }
-
-        private void txtNome_TextChanged(object sender, EventArgs e)
-        {
-            VerificarCaixasPreenchidas();
-        }
-
         private void VerificarCaixasPreenchidas()
         {
             if (txtNome.Text != "" && txtCPF.Text != "")
@@ -29,17 +23,24 @@ namespace ControleFinanceiro
             else
                 btnInserir.Enabled = false;
         }
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+            VerificarCaixasPreenchidas();
+        }
 
         private void txtCPF_TextChanged(object sender, EventArgs e)
         {
             VerificarCaixasPreenchidas();
         }
-
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            Cliente cliente = new Cliente();
-            cliente.Nome = txtNome.Text;
-            cliente.CPF = txtCPF.Text;
+            string nome = txtNome.Text;
+            string cpf = txtCPF.Text;
+            string telefone = txtTel.Text;
+            Cliente cliente = new Cliente(nome, cpf);
+            Cliente clientet = new Cliente(nome, cpf, telefone);
+            
+
             lstClientes.Items.Add(cliente.ToString());
             LimparCaixas();
         }
@@ -48,6 +49,7 @@ namespace ControleFinanceiro
         {
             txtCPF.Clear();
             txtNome.Clear();
+            txtTel.Clear();
         }
         private void lstClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -61,8 +63,13 @@ namespace ControleFinanceiro
             int selectedIndex = lstClientes.SelectedIndex;
             if (selectedIndex != -1)
             {
-              lstClientes.Items.RemoveAt(selectedIndex);
+                lstClientes.Items.RemoveAt(selectedIndex);
             }
+        }
+
+        private void txtTel_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

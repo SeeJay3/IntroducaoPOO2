@@ -35,6 +35,8 @@
             btnInserir = new Button();
             btnExcluir = new Button();
             lstClientes = new ListBox();
+            lblTelefone = new Label();
+            txtTel = new TextBox();
             SuspendLayout();
             // 
             // lblNome
@@ -74,7 +76,7 @@
             // btnInserir
             // 
             btnInserir.Enabled = false;
-            btnInserir.Location = new Point(64, 133);
+            btnInserir.Location = new Point(64, 163);
             btnInserir.Name = "btnInserir";
             btnInserir.Size = new Size(75, 23);
             btnInserir.TabIndex = 4;
@@ -85,7 +87,7 @@
             // btnExcluir
             // 
             btnExcluir.Enabled = false;
-            btnExcluir.Location = new Point(147, 133);
+            btnExcluir.Location = new Point(147, 163);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.Size = new Size(75, 23);
             btnExcluir.TabIndex = 5;
@@ -97,17 +99,36 @@
             // 
             lstClientes.FormattingEnabled = true;
             lstClientes.ItemHeight = 15;
-            lstClientes.Location = new Point(64, 184);
+            lstClientes.Location = new Point(64, 207);
             lstClientes.Name = "lstClientes";
             lstClientes.Size = new Size(158, 109);
             lstClientes.TabIndex = 6;
             lstClientes.SelectedIndexChanged += lstClientes_SelectedIndexChanged;
+            // 
+            // lblTelefone
+            // 
+            lblTelefone.AutoSize = true;
+            lblTelefone.Location = new Point(64, 124);
+            lblTelefone.Name = "lblTelefone";
+            lblTelefone.Size = new Size(54, 15);
+            lblTelefone.TabIndex = 7;
+            lblTelefone.Text = "Telefone:";
+            // 
+            // txtTel
+            // 
+            txtTel.Location = new Point(122, 121);
+            txtTel.Name = "txtTel";
+            txtTel.Size = new Size(100, 23);
+            txtTel.TabIndex = 8;
+            txtTel.TextChanged += txtTel_TextChanged;
             // 
             // frmCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(286, 450);
+            Controls.Add(txtTel);
+            Controls.Add(lblTelefone);
             Controls.Add(lstClientes);
             Controls.Add(btnExcluir);
             Controls.Add(btnInserir);
@@ -131,5 +152,7 @@
         private Button btnInserir;
         private Button btnExcluir;
         private ListBox lstClientes;
+        private Label lblTelefone;
+        private TextBox txtTel;
     }
 }

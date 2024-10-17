@@ -10,9 +10,33 @@ namespace ControleFinanceiro.Model
     {
         public string Nome { get; set; }
         public string CPF { get; set; }
+        public string Telefone { get; set; }
+        public List<Conta> Contas { get; set; }
+        public Cliente(string nome, string cpf)
+        {
+            Nome = nome;
+            CPF = cpf;
+        }
+        public Cliente(string nome, string cpf, string telefone)
+        {
+            Nome = nome;
+            CPF = cpf;
+            Telefone = telefone;
+        }
         public override string ToString()
         {
-            return Nome + " - " + CPF;
+            return Nome + " - " + CPF + $" - {Telefone}";
+        }
+        public decimal SaldoDasContas()
+        {
+            {
+                decimal total = 0;
+                foreach (Conta conta in Contas)
+                {
+                    total += conta.Saldo; 
+                }
+                return total;
+            }
         }
     }
 }
