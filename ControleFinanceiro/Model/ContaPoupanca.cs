@@ -15,7 +15,7 @@ namespace ControleFinanceiro.Model
             throw new NotImplementedException();
         }
 
-        public override void Saque(decimal valor)
+        public override bool Saque(decimal valor)
         {
             throw new NotImplementedException();
         }

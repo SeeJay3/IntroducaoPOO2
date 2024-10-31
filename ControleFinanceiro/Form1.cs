@@ -40,8 +40,11 @@ namespace ControleFinanceiro
             Cliente cliente = new Cliente(nome, cpf);
             Cliente clientet = new Cliente(nome, cpf, telefone);
             
-
-            lstClientes.Items.Add(cliente.ToString());
+            if (telefone != null)
+                lstClientes.Items.Add(clientet.ToString());
+            else
+                lstClientes.Items.Add(cliente.ToString());
+            
             LimparCaixas();
         }
 

@@ -25,7 +25,10 @@ namespace ControleFinanceiro.Model
         }
         public override string ToString()
         {
-            return Nome + " - " + CPF + $" - {Telefone}";
+            if (Telefone != string.Empty)
+                return Nome + " - " + CPF + $" - {Telefone}";
+            else
+                return Nome + " - " + CPF;
         }
         public decimal SaldoDasContas()
         {

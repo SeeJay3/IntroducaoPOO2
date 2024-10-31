@@ -12,18 +12,28 @@ namespace ControleFinanceiro.Model
 
         public override void Deposito(decimal valor)
         {
-            throw new NotImplementedException();
+            Saldo += valor;
         }
 
         //O saldo da conta nunca poderá ficar negativo além do seu limite
-        public override void Saque(decimal valor)
+        public override bool Saque(decimal valor)
         {
-            throw new NotImplementedException();
+            if(Saldo + Limite >= valor)
+            {
+                Saldo -= valor;
+                return true;
+            }  
+            else
+            {
+                throw new Exception("Saldo insuficiente.");
+            }
         }
 
         public override void Transferencia(Conta destino, decimal valor)
         {
-            throw new NotImplementedException();
+            if (Saque(valor))
+                destino.Deposito(valor);
+            
         }
     }
 }
